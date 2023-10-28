@@ -1,0 +1,137 @@
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+*:root{
+    --Blue: #345ff6;
+    --Gunmetal: #253347;
+    --Dark-Electric-Blue: #5e6e85
+    --Borders: #D8E2E7;
+    --White: #ffffff
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Inter', sans-serif;
+}
+section{
+    padding: 3.2rem;
+
+}
+.container{
+    max-width: 144rem;
+}
+.hero-page{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+}
+.hero-desc{
+    background-color: var(-Borders) to var(--Dark-Electric-Blue);
+}
+.hero-details{
+    grid-column: 2 / span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    max-width: 56.4rem;
+    justify-content: space-between;
+    align-items: start;
+    padding: 2rem;
+    
+}
+.unit-type{
+    display: flex;
+    align-items: start;
+    gap: 9.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.unit{
+    transform: scale(1.5);
+}
+.unit:hover{
+    background-color : #64022e !important;
+
+    border: 1px solid black !important;
+}
+.bmi-value{
+    background-color: var(--Blue);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    ;
+    padding: 2.4rem;
+    gap: 1.5rem;
+    border-radius: 9px 1000px 1000px 9px;
+
+}
+.mass-index{
+    display: flex;
+    gap: 1rem;
+    margin-top: .5rem;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+}
+.mass-index label{
+    font-weight: 400;
+    color: var(--Dark-Electric-Blue);
+}
+.index{
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+}
+.index input{
+    margin-top: .5rem;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding-left: 1rem;
+    font-size: 1.8rem;
+    color: var(--Gunmetal);
+}
+
+.index input:hover{
+    border: 2px solid var(--Blue);
+    cursor: pointer; 
+}
+.index input:focus {
+    outline: none !important;
+    border:2px solid var(--Blue);
+  }
+  .height-index::after{
+    content: "cm";
+    position: absolute;
+    right: 0;
+    transform: translate(-150%,0%);
+    margin-right: 15px;
+    top: 30px;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--Blue);
+  }
+  .width-index:after{
+    content: 'kg';
+    position: absolute;
+    right: 0;
+    transform: translate(-150%,0%);
+    margin-right: 20px;
+    top: 30px;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--Blue);
+  }
+.bmi-p{
+    color: #d8e2e7;
+    font-size: 1.2rem;
+
+}
+.bmi-num{
+    color: var(--White);
+    margin-top: .4rem;
+}
