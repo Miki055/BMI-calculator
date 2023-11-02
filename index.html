@@ -11,8 +11,9 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="/styles/general.css" />
+    <link rel="stylesheet" href="styles/general.css" />
     <title>Frontend Mentor | Body Mass Index Calculator</title>
+    <script type="module" src="index.js"></script>
   </head>
   <body>
     <section>
@@ -32,38 +33,81 @@
             <form>
               <div class="unit-type">
                 <div class="type">
-                  <input class="unit" type="radio" /> Metric
+                  <input id="metric" class="unit backgroundUnit backgroundUnit-hide " type="radio" /> Metric
                 </div>
                 <div class="type">
-                  <input class="unit" type="radio" /> Imperial
+                  <input id="imperialBtn" class="unit height-index" type="radio" /> Imperial
                 </div>
               </div>
-              <div class="mass-index">
-                <div class="index height-index">
-                  <label class="" for="height">Height</label>
-                  <input type="tel" />
+              <div class="calculator-metric ">
+                <div class="mass-index">
+                  <div class="index height-index">
+                    <label for="height">Height</label>
+                    <input class="heightInput" type="number" checked required />
+                  </div>
+                  <div class="index">
+                    <label class="index width-index" for="weight">Weight</label>
+                    <input class="weightInput" type="number" required />
+                  </div>
                 </div>
-                <div class="index">
-                  <label class="index width-index" for="weight">Weight</label>
-                  <input type="tel" />
+              </div>
+              <div class="calculator-imperial hide">
+                <div class="mass-index-imp">
+                  <div class="first-row">
+                    <div class="height-values">            
+                      <input class="height firstHeight" id="heightFt" type="number" > <span class="imperial-units">ft</span>
+                    </div>
+                    <div class="height-values">
+                      <input id="heightIn" class="height lastHeight" type="number" > <span class="imperial-units">in</span>
+                    </div>
+                  </div>
+                  <div class="second-row">
+                    <div class="weight-values">
+                      
+                      <input id="weightSt" class="weight firstWeight" type="number" > <span class="imperial-units">st</span>
+                    </div>
+                    <div class="weight-values">
+                      <input id="weightLbs" class="weight lastWeight" type="number" > <span class="imperial-units">lbs</span>
+                    </div>
+                  </div>
                 </div>
+              </div>
+             
+              <div class="bmi-active">
+                <div class="bmi-welcome--box">
+                  <div class="bmi-welcome">
+                    <h1 class="heading-secondary bmi-welcome--heading">
+                      Welcome!
+                    </h1>
+                    <p class="welcome-p">
+                      Enter your height and weight and see your BMI result here
+                    </p>
+                  </div>
+                </div>
+                <div class="bmi-value">
+                  <div class="bmi-number">
+                    <h2 class="bmi-heading heading-tertiary">Your BMI Is...</h2>
+                    <h1 class="heading-primary bmi-num">23.4</h1>
+                  </div>
+                  <div class="bmi-description">
+                    <p class="p-secondary bmi-p">
+                      Your BMI suggests you're
+                      <span class="ideal-weight-text">healthy</span> weight. Your
+                      ideal weight is between
+                      <strong class="ideal-weight">63.3kgs - 85.2kgs</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
               </div>
             </form>
-            <div class="bmi-value">
-              <div class="bmi-number">
-                <h2 class="heading-tertiary">Your BMI Is...</h2>
-                <h1 class="heading-primary bmi-num">23.4</h1>
-              </div>
-              <div class="bmi-description">
-                <p class="p-secondary bmi-p">
-                  Your BMI suggests you're a healthy weight. Your ideal weight
-                  is between <span class="ideal-weight">63.3kgs - 85.2kgs</span>
-                </p>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
+      
     </section>
   </body>
 </html>

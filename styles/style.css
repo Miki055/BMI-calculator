@@ -38,36 +38,85 @@ section{
     flex-direction: column;
     gap: 3.2rem;
     max-width: 56.4rem;
+    width: 56.4rem;
     justify-content: space-between;
     align-items: start;
     padding: 2rem;
     
 }
+/* METRIC / IMPERIAL UNIT */
 .unit-type{
     display: flex;
     align-items: start;
-    gap: 9.5rem;
+    gap: 11rem;
     font-size: 1.4rem;
     font-weight: 500;
 }
 .unit{
-    transform: scale(1.5);
+    transform: scale(2);
+    accent-color: var(--Blue);
+    margin-bottom: 1rem;
 }
-.unit:hover{
-    background-color : #64022e !important;
-
-    border: 1px solid black !important;
-}
-.bmi-value{
+.backgroundUnit::before{
+    content: "";
+    width: 17px;
+    height: 17px;
     background-color: var(--Blue);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    ;
-    padding: 2.4rem;
-    gap: 1.5rem;
-    border-radius: 9px 1000px 1000px 9px;
+    position: absolute;
+    border-radius: 50%;
+    top: -12.5%;
+    left: 22%;
+    opacity: 20%;
+}
+
+.bmi-value{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
 
 }
+.bmi-number{
+    margin-left: 1rem;
+}
+.bmi-active{
+    background-color: var(--Blue);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   height: 20rem;
+    justify-content: center;
+    align-items: start;
+    gap: 4rem;
+    border-radius: 9px 1000px 1000px 9px;
+    margin-top: 2.4rem;
+}
+.bmi-welcome{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    margin-left: 2rem;
+    color: var(--White)
+
+}
+.bmi-welcome--heading,.welcome-p,.bmi-heading{
+    font-size: 1.4rem;
+}
+
+
+
+.bmi-p{
+    color: #d8e2e7;
+    font-size: 1.2rem;
+
+}
+.bmi-num{
+    color: var(--White);
+    margin-top: 2rem;
+}
+
+/* HEIGHT / WEIGHT INPUTS */
 .mass-index{
     display: flex;
     gap: 1rem;
@@ -97,7 +146,8 @@ section{
 }
 
 .index input:hover{
-    border: 2px solid var(--Blue);
+    outline: 2px solid var(--Blue);
+    outline-offset: -2px;
     cursor: pointer; 
 }
 .index input:focus {
@@ -108,8 +158,8 @@ section{
     content: "cm";
     position: absolute;
     right: 0;
-    transform: translate(-150%,0%);
-    margin-right: 15px;
+    transform: translate(-350%,0%);
+    margin-right: 5px;
     top: 30px;
     font-weight: 600;
     font-size: 12px;
@@ -119,19 +169,109 @@ section{
     content: 'kg';
     position: absolute;
     right: 0;
-    transform: translate(-150%,0%);
+    transform: translate(-350%,0%);
     margin-right: 20px;
     top: 30px;
     font-weight: 600;
     font-size: 12px;
     color: var(--Blue);
   }
-.bmi-p{
-    color: #d8e2e7;
-    font-size: 1.2rem;
+/* ******************** */
+/* IMPERIAL */
+/* ******************** */
 
+.hide{
+    display: none;
 }
-.bmi-num{
-    color: var(--White);
-    margin-top: .4rem;
+.mass-index-imp{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
+.first-row{
+    position: relative;
+    margin-top: 2.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+.first-row input{
+    margin-top: .5rem;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding-left: 1rem;
+    font-size: 1.8rem;
+    color: var(--Gunmetal);
+}
+.second-row{
+    position: relative;
+    margin-top: 2.4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+.second-row input{
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    font-size: 1.8rem;
+    padding-left: 1rem;
+    color: var(--Gunmetal);
+    margin-top: .25rem;
+}
+.second-row::before{
+    content: "Weight";
+    position: absolute;
+    top: -40%;
+    text-align: start;
+    left: 2%;
+    font-size: 1.2rem;
+}
+.first-row::before{
+    content: "Height";
+    position: absolute;
+    top: -35%;
+    text-align: start;
+    left: 2%;
+    font-size: 1.2rem;
+}
+  .firstHeight::after{
+    content: "ft";
+    position: absolute;
+    right: 0;
+    transform: translate(-350%,0%);
+    margin-right: 32px;
+    top: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--Blue);
+  }
+  .imperial-units{
+    position: absolute;
+    transform: translate(-200%,75%);
+    font-size: 1.6rem;
+    color: var(--Blue);
+    font-weight: 600;
+
+  }
+  .height-values input:hover,.weight-values input:hover{
+    outline: 2px solid var(--Blue);
+    outline-offset: -2px;
+    cursor: pointer; 
+  }
+  .height-values input:focus,.weight-values input:focus{
+    outline: none !important;
+    border:2px solid var(--Blue);
+  }
+  
+/*
+
+.index input:focus {
+    outline: none !important;
+    border:2px solid var(--Blue);
+  }*/

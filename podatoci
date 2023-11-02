@@ -68,3 +68,89 @@
   Certain health concerns may affect individuals of some Black and Asian origins at 
   lower BMIs than others. To learn more, it is advised to discuss this with your 
   GP or practice nurse.
+
+
+
+
+  <div class="calculator-imperial hide">
+  <div class="height-and-weight">
+    
+    <div class="dimensions-wrapper height-wrapper">
+      <div class="index data-container">
+        <input
+          type="number"
+          id="foot"
+          placeholder="0"
+          max="300"
+          min="30"
+        />
+        <span>ft</span>
+      </div>
+      <div class="index data-container">
+        <input
+          type="number"
+          id="inch"
+          placeholder="0"
+          max="600"
+          min="2"
+        />
+        <span>in</span>
+      </div>
+    </div>
+    <label for="stone">Weight</label>
+    <div class="dimensions-wrapper">
+      <div class="index data-container">
+        <input
+          type="number"
+          id="stone"
+          placeholder="0"
+          max="300"
+          min="30"
+        />
+        <span>st</span>
+      </div>
+      <div class="index data-container">
+        <input
+          type="number"
+          id="libra"
+          placeholder="0"
+          max="600"
+          min="2"
+        />
+        <span>lbs</span>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="calculator-imperial ">
+  <div class="mass-index">
+    <div class="index height-index firstHeight">
+      <label for="height">Height</label>
+      <input class="heightInput" type="number" checked required />
+    </div>
+    <div class="index">
+      <label class="index width-index" for="weight">Weight</label>
+      <input class="weightInput" type="number" required />
+    </div>
+  </div>
+  <div class="mass-index">
+    <div class="index height-index lastHeight">
+      
+      <input class="heightInput" type="number" checked required />
+    </div>
+    <div class="index">
+      <label class="index width-index lastWeight" for="weight"></label>
+      <input class="weightInput" type="number" required />
+    </div>
+  </div>
+</div>
