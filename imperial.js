@@ -5,7 +5,8 @@ const resultMessage = document.querySelector(".bmi-value");
 const numberResult = document.querySelector(".bmi-num");
 const idealWeight = document.querySelector(".ideal-weight");
 const healthinessText = document.querySelector(".ideal-weight-text");
-
+const bmiBox = document.querySelector(".bmi-value hide");
+const bmiWelcomeBox = document.querySelector(".bmi-welcome--box");
 // Heights IMPERIAL
 const heightFt = document.querySelector("#heightFt");
 const heightIn = document.querySelector("#heightIn");
@@ -23,7 +24,6 @@ heightFt.addEventListener("input", showResult);
 heightIn.addEventListener("input", showResult);
 weightSt.addEventListener("input", showResult);
 weightLbs.addEventListener("input", showResult);
-
 function showResult() {
   const { value: foot } = heightFt;
   const { value: inch } = heightIn;
@@ -31,19 +31,22 @@ function showResult() {
   const { value: libra } = weightLbs;
 
   if (foot && inch && stone && libra) {
-    welcomeMessage.classList.add("hide");
-    resultMessage.classList.remove("hide");
+    welcomeMessage.style.display = "none";
+    resultMessage.style.display = "flex";
 
-    const bmi = calculateImperial(foot, inch, stone, libra);
+    let bmi = calculateIMCImperial(foot, inch, stone, libra);
 
-    numberResult.innerText = bmi > 999 ? "..." : bmi.toFixed(2);
-    idealWeight.innerText = calculateIdealWeightImperial(foot, inch);
+    numberResult.innerHTML = bmi.toFixed(2);
+    numberResult.style.display = "flex";
+    idealWeight.innerText = calculateIdealWeightImperial(heightFt, heightIn);
+
+    console.log(`Your bmi is ${bmi}`);
   } else {
     welcomeMessage.classList.remove("hide");
     resultMessage.classList.add("hide");
   }
 }
-function calculateImperial(foot, inch, stone, libra) {
+function calculateIMCImperial(foot, inch, stone, libra) {
   const heightM = (foot * 30.48 + inch * 2.54) / 100;
   const weightKg =
     stone * weightConversionFactor.stoneToKg +
@@ -72,6 +75,10 @@ function calculateIdealWeightImperial(foot, inch) {
     (weightMaxKg % weightConversionFactor.stoneToKg) /
       weightConversionFactor.libraToKg
   );
+  console.log(typeof weightMaxLibras);
+  console.log(typeof weightMaxStones);
+  console.log(typeof weightMinLibras);
+  console.log(typeof weightMinStones);
 
   return `${weightMinStones}st ${weightMinLibras}lbs - ${weightMaxStones}st ${weightMaxLibras}lbs.`;
 }

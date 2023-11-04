@@ -28,6 +28,7 @@ function calculateBMI() {
 
   let bmiResult = weight / (height / 100) ** 2;
   numberResult.innerHTML = bmiResult.toFixed(2);
+
   if (bmiResult < 18.5) {
     healthinessText.textContent = "not healthy";
   } else if (bmiResult > 24.9) {
